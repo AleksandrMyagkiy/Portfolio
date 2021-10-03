@@ -93,6 +93,12 @@
         width: 90px;
         align-items: center;
         justify-content: space-between;
+        svg{   
+            &:hover {
+                width: 30px;
+                height: 30px;
+        }
+        }
     }
     &__overlay {
         position: fixed;

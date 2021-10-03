@@ -16,30 +16,62 @@
     &__wrapper {
         padding: 60px 10px 0 10px;
         display: grid;
-        grid-template-columns: repeat(4, 270px);
-        grid-template-rows: repeat(2, 270px);
+        grid-template: repeat(2, minmax(270px, auto)) / repeat(4, 270px);
+        grid-auto-rows: minmax(270px, auto);
         gap: 10px;
     }
     &__item {
-        width: 270px;
-        height: 270px;
+        padding: 30px 30px 25px 30px;
         border: 1px solid #000000;
         box-sizing: border-box;
-        img {
-            margin: 30px 0 0 30px;
-            min-width: 46px;
-            min-height: 37px;
+        &-img {
+            display: flex;
+            align-items: center;
+            min-height: 65px;
         }
         &-header {
             margin-top: 20px;
-            margin-left: 30px;
         }
         &-text {
-            margin: 15px 30px 25px 30px;
+            margin-top: 15px;
             font-weight: 500;
             font-size: 12px;
             line-height: 18px;
             
+        }
+    }
+    &__progress {
+        margin-top: 128px;
+        display: grid;
+        grid-template: repeat(2, minmax(70px, auto)) / repeat(3, 350px);
+        grid-auto-rows: minmax(70px, auto);
+        gap: 30px 45px;
+        &-subheader {
+            padding: 3px 0 0 14px;
+            position: absolute;
+            display: flex;
+            justify-content: start;
+            @include before_circle;
+        }
+        &-text {
+            position: relative;
+            display: flex;
+            justify-content: end;
+            margin-bottom: 27px;
+        }
+        &-line {
+            position: relative;
+            width: 350px;
+            height: 14px;
+            background: #E8E4DE;
+            border-radius: 4px;
+            span {
+                position: absolute;
+                width: 300px;
+                height: 100%;
+                background: $main-color;
+                border-radius: 4px;
+            }
         }
     }
 }
